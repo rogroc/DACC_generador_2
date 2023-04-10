@@ -143,7 +143,8 @@ for e in entitats:
 import sys
 
 if resultat2:
-    print(resultat2)
+    #print(resultat2)
+    print('Hi ha resultats')
 else:
     sys.exit('El BORME analitzat no conté cap entitat del RSP')
 
@@ -151,12 +152,12 @@ resultat3 = []
 
 for r in resultat2:
     url2 = url+"pdfs/"+r[1].upper()+".pdf"
-    print(url2)
+    #print(url2)
     
     response = requests.get(url2)
     
     pdf2 = url2.split("/")[-1:][0]
-    print(pdf2)
+    #print(pdf2)
     with open(pdf2, "wb") as f:
         f.write(response.content)
 
@@ -182,7 +183,7 @@ for r in resultat2:
         
     entrada = r[2]
     
-    print(entrada)
+    #print(entrada)
     match = re.search(rf"{entrada}(.*?)Datos registrales", str(text_pdf))
     
     # Extracció del resultat
